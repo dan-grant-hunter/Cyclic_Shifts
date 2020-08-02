@@ -4,12 +4,26 @@
 
 # Get input from the user for Text
 def get_text():
-    text = input("Enter in text as T using capitals only: ")
+    while True:
+        text = input("Enter in text using capitals only: ")
+        if text.isupper() == False:
+            print("Text must all be in uppercase")
+            continue
+        else:
+            break
+    return text
 
 
 # Get input from the user for String
 def get_string():
-    string = input("Enter in text as S using capitals only: ")
+    while True:
+        string = input("Enter in text to perform cyclic shift using capitals only: ")
+        if string.isupper() == False:
+            print("Text must all be in uppercase")
+            continue
+        else:
+            break
+    return string
 
 
 # Work out if T contains a cyclic shift of S
@@ -21,7 +35,7 @@ def get_combinations(text, string):
         else:
             string = string[1:] + string[0]
             possible_combinations.append(string)
-    print(possible_combinations)
+    return possible_combinations
 
 
 # Return Output
