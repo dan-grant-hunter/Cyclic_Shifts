@@ -6,7 +6,7 @@
 def get_text():
     while True:
         text = input("Enter in text using capitals only: ")
-        if text.isupper() == False:
+        if not text.isupper():
             print("Text must all be in uppercase")
             continue
         else:
@@ -17,8 +17,9 @@ def get_text():
 # Get input from the user for String
 def get_string():
     while True:
-        string = input("Enter in text to perform cyclic shift using capitals only: ")
-        if string.isupper() == False:
+        string = input(
+            "Enter in text to perform cyclic shift using capitals only: ")
+        if not string.isupper():
             print("Text must all be in uppercase")
             continue
         else:
@@ -41,23 +42,23 @@ def get_combinations(text, string):
 # Return Output
 def cyclic_shift(combinations, text):
     for combination in combinations:
-         if combination in text:
+        if combination in text:
             return True
-         else:
+        else:
             continue
     return False
 
 
 # Main Loop
 def main_loop():
-   text = get_text()
-   string = get_string()
-   combinations = get_combinations(text, string)
-   result = cyclic_shift(combinations, text)
-   if result:
-      print("Yes")
-   else:
-      print("No")
+    text = get_text()
+    string = get_string()
+    combinations = get_combinations(text, string)
+    result = cyclic_shift(combinations, text)
+    if result:
+        print("Yes")
+    else:
+        print("No")
 
 
 # Replay Prompt
